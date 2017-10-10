@@ -2,43 +2,259 @@
 <html>
   <head>
     <title>Tienda</title>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="description" content="An ecommerce system for Craft CMS" />
+
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,600">
+
     <style>
+      html {
+        height: 100%;
+      }
+
       html,
       body {
-        background-color: #FFF;
-        height: 100%;
-        margin: 0;
-        width: 100%;
+        min-height: 100%;
       }
 
       body {
         align-items: center;
+        background-color: #313332;
+        box-sizing: border-box;
         display: flex;
+        flex-direction: column;
+        font-family: Muli, sans-serif;
+        font-size: 16px;
+        font-weight: 300;
         justify-content: center;
+        letter-spacing: 1px;
+        line-height: 24px;
+        margin: 0;
+        padding: 60px 10px;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      header,
+      form {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      h1 {
+        color: #5CE6A1;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      header p {
+        color: #F5FAF7;
+        font-size: 18px;
+        margin-bottom: 0;
+        margin-top: 12px;
+      }
+
+      svg {
+        display: block;
+        margin-top: 60px;
+        max-width: 100%;
+      }
+
+      form {
+        display: flex;
+        margin-top: 60px;
+      }
+
+      button,
+      [type="email"] {
+        font: inherit;
+        letter-spacing: 0.5px;
+        padding: 11px 10px;
+      }
+
+      button {
+        background-color: #5CE6A1;
+        border: none;
+        color: #FFF;
+        cursor: pointer;
+        font-weight: 600;
+        margin-left: 5px;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      button:hover,
+      button:focus {
+        background-color: #52CC8F;
+      }
+
+      [type="email"] {
+        border: none;
+        color: #313332;
+        flex-grow: 1;
+        white-space: nowrap;
+      }
+
+      ::-webkit-input-placeholder {
+        color: #79807C;
+      }
+
+      ::-moz-placeholder {
+        color: #79807C;
+      }
+
+      ::-ms-input-placeholder {
+        color: #79807C;
+      }
+
+      :-moz-placeholder {
+        color: #79807C;
+      }
+
+      :placeholder {
+        color: #79807C;
+      }
+
+      @media screen and (min-width: 450px) {
+        body {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        button,
+        [type="email"] {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
       }
     </style>
   </head>
   <body>
-    <svg width="64" height="64" viewBox="0 0 64 64">
+    <header>
+      <h1>tienda</h1>
+      <p>An ecommerce system for Craft CMS</p>
+    </header>
+
+    <svg width="411" height="208" viewBox="0 0 411 208">
       <defs>
-        <linearGradient id="a" x1="67.927%" x2="35.474%" y1="23.984%" y2="75.167%">
-          <stop offset="0%" stop-color="#171A18"/>
+        <linearGradient id="window" x1="67.927%" x2="35.474%" y1="23.984%" y2="75.167%">
+          <stop offset="0%" stop-color="#161A17"/>
           <stop offset="100%" stop-color="#454D49"/>
         </linearGradient>
       </defs>
-      <path fill="#C6CCC9" fill-rule="nonzero" d="M31.982 34L4 20v30l28 14"/>
-      <path fill="#47B37D" fill-rule="nonzero" d="M31.982 26L32 34 0 18l4-6"/>
-      <path fill="#52CC8F" fill-rule="nonzero" d="M32.018 26L60 12l4 6-32 16"/>
-      <path fill="#DFE6E2" fill-rule="nonzero" d="M32.018 34L60 20v30L32 64"/>
-      <path fill="#52CC8F" fill-rule="nonzero" d="M35 51l22-11 4 2-22 11"/>
-      <path fill="#47B37D" d="M39 53l22-11v1L39 54"/>
-      <path fill="#3D996B" d="M35 51l4 2v1l-4-2"/>
-      <path fill="url(#a)" fill-rule="nonzero" d="M35 36l22-11v15L35 51"/>
-      <path fill="#5CE6A1" fill-rule="nonzero" d="M32 0l28 12.171-28 14-28-14"/>
+      <g fill="none">
+        <path fill="#3E403F" d="M206 66l66-33-66-33-66 33"/>
+        <path fill="#191A19" d="M140 33l66 33v2l-66-33"/>
+        <path fill="#252626" d="M206 66l66-33v2l-66 33"/>
+        <path fill="#3E403F" d="M275 101l66-33-66-33-66 33"/>
+        <path fill="#191A19" d="M209 68l66 33v2l-66-33"/>
+        <path fill="#252626" d="M275 101l66-33v2l-66 33"/>
+        <path fill="#3E403F" d="M345 136l66-33-66-33-66 33"/>
+        <path fill="#191A19" d="M279 103l66 33v2l-66-33"/>
+        <path fill="#252626" d="M345 136l66-33v2l-66 33"/>
+        <path fill="#3E403F" d="M136 101l66-33-66-33-66 33"/>
+        <path fill="#191A19" d="M70 68l66 33v2L70 70"/>
+        <path fill="#252626" d="M136 101l66-33v2l-66 33"/>
+        <path fill="#3E403F" d="M205 136l66-33-66-33-66 33"/>
+        <path fill="#191A19" d="M139 103l66 33v2l-66-33"/>
+        <path fill="#252626" d="M205 136l66-33v2l-66 33"/>
+        <path fill="#3E403F" d="M275 171l66-33-66-33-66 33"/>
+        <path fill="#191A19" d="M209 138l66 33v2l-66-33"/>
+        <path fill="#252626" d="M275 171l66-33v2l-66 33"/>
+        <path fill="#3E403F" d="M66 136l66-33-66-33-66 33"/>
+        <path fill="#191A19" d="M0 103l66 33v2L0 105"/>
+        <path fill="#252626" d="M66 136l66-33v2l-66 33"/>
+        <path fill="#3E403F" d="M135 171l66-33-66-33-66 33"/>
+        <path fill="#191A19" d="M69 138l66 33v2l-66-33"/>
+        <path fill="#252626" d="M135 171l66-33v2l-66 33"/>
+        <path fill="#3E403F" d="M205 206l66-33-66-33-66 33"/>
+        <path fill="#191A19" d="M139 173l66 33v2l-66-33"/>
+        <path fill="#252626" d="M205 206l66-33v2l-66 33"/>
+        <path fill="#313332" fill-rule="nonzero" d="M203 118l-30-15 4-2v2l28 14-2 1zm2 1l-2-1 30-15v-2l4 2-32 16z"/>
+        <path fill="#EBF2EF" fill-rule="nonzero" d="M205 88l28-14v29l-28 14"/>
+        <path fill="#DAE0DD" fill-rule="nonzero" d="M205 88l-28-14v29l28 14"/>
+        <path fill="url(#window)" fill-rule="nonzero" d="M208 90l22-11v14L208 104"/>
+        <path fill="#D7DEDB" fill-rule="nonzero" d="M208 110l22-11v-5l-22 11"/>
+        <path fill="#52CC8F" fill-rule="nonzero" d="M208 104l22-11 4 2-22 11"/>
+        <path fill="#47B37D" d="M212 106l22-11v1l-22 11"/>
+        <path fill="#3D996B" d="M208 104l4 2v1l-4-2"/>
+        <path fill="#D7DEDB" d="M205 88l28-14v1l-28 14"/>
+        <path fill="#52CC8F" d="M205 81l28-14 4 5-32 16"/>
+        <path fill="#C6CCC9" d="M205 88l-28-14v1l28 14"/>
+        <path fill="#47B37D" d="M205 81v7l-32-16 4-5"/>
+        <path fill="#5CE6A1" d="M205 53l28 14-28 14-28-14"/>
+      </g>
     </svg>
+
+    <form
+      method="POST"
+      action="https://now.us11.list-manage.com/subscribe/post"
+      novalidate
+    >
+      <input type="hidden" name="u" value="29d2c933385ae633a56b9882a">
+      <input type="hidden" name="id" value="edb0c2de98">
+
+      <input
+        type="email"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        name="MERGE0"
+        placeholder="Email address"
+      />
+
+      <button type="submit">
+        Get early access
+      </button>
+    </form>
+
+    <script>
+      var params = function (inputs) {
+        return inputs.map(function (input) {
+          return input.name + '=' + encodeURIComponent(input.value)
+        }).join('&')
+      }
+
+      var init = function () {
+        var form = document.querySelector('form')
+        var button = form.querySelector('button')
+        var inputs = [].slice.call(document.querySelectorAll('input'))
+        var script
+
+        window.callback = function (data) {
+          document.body.removeChild(script)
+
+          if (data.result === 'success') {
+            alert("Thanks! You've been sent a confirmation email.")
+          } else if (data.result === 'error') {
+            button.removeAttribute('disabled')
+            alert("Sorry. " + data.msg)
+          }
+        }
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault()
+
+          button.setAttribute('disabled', '')
+
+          script = document.createElement('script')
+          script.src = form.action + '-json?' + params(inputs) + '&c=callback'
+
+          document.body.appendChild(script)
+        })
+      }
+
+      document.addEventListener('DOMContentLoaded', init)
+    </script>
   </body>
 </html>
