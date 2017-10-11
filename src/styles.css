@@ -21,6 +21,8 @@ body {
   line-height: 24px;
   margin: 0;
   padding: 20px 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 header {
@@ -69,7 +71,7 @@ button,
 }
 
 button {
-  background-color: #5CE6A1;
+  background-color: #52CC8F;
   border: none;
   color: #FFF;
   cursor: pointer;
@@ -79,7 +81,7 @@ button {
 
 button:not([disabled]):hover,
 button:not([disabled]):focus {
-  background-color: #52CC8F;
+  background-color: #5CE6A1;
 }
 
 button[disabled] {
