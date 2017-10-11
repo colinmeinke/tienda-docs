@@ -10,134 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,600">
-
-    <style>
-      html {
-        height: 100%;
-      }
-
-      html,
-      body {
-        min-height: 100%;
-      }
-
-      body {
-        align-items: center;
-        background-color: #313332;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        font-family: Muli, sans-serif;
-        font-size: 16px;
-        font-weight: 300;
-        justify-content: center;
-        letter-spacing: 1px;
-        line-height: 24px;
-        margin: 0;
-        padding: 60px 10px;
-      }
-
-      header {
-        text-align: center;
-      }
-
-      header,
-      form {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 500px;
-        width: 100%;
-      }
-
-      h1 {
-        color: #5CE6A1;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 36px;
-        margin-bottom: 0;
-        margin-top: 0;
-      }
-
-      header p {
-        color: #F5FAF7;
-        font-size: 18px;
-        margin-bottom: 0;
-        margin-top: 12px;
-      }
-
-      svg {
-        display: block;
-        margin-top: 60px;
-        max-width: 100%;
-      }
-
-      form {
-        display: flex;
-        margin-top: 60px;
-      }
-
-      button,
-      [type="email"] {
-        font: inherit;
-        letter-spacing: 0.5px;
-        padding: 11px 10px;
-      }
-
-      button {
-        background-color: #5CE6A1;
-        border: none;
-        color: #FFF;
-        cursor: pointer;
-        font-weight: 600;
-        margin-left: 5px;
-        transition: background-color 0.3s ease-in-out;
-      }
-
-      button:hover,
-      button:focus {
-        background-color: #52CC8F;
-      }
-
-      [type="email"] {
-        border: none;
-        color: #313332;
-        flex-grow: 1;
-        white-space: nowrap;
-      }
-
-      ::-webkit-input-placeholder {
-        color: #79807C;
-      }
-
-      ::-moz-placeholder {
-        color: #79807C;
-      }
-
-      ::-ms-input-placeholder {
-        color: #79807C;
-      }
-
-      :-moz-placeholder {
-        color: #79807C;
-      }
-
-      :placeholder {
-        color: #79807C;
-      }
-
-      @media screen and (min-width: 450px) {
-        body {
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-
-        button,
-        [type="email"] {
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href='../tmp/styles.css'>
   </head>
   <body>
     <header>
@@ -214,47 +87,11 @@
       />
 
       <button type="submit">
-        Get early access
+        <span></span><span></span><span></span>
+        <span>Get early access</span>
       </button>
     </form>
 
-    <script>
-      var params = function (inputs) {
-        return inputs.map(function (input) {
-          return input.name + '=' + encodeURIComponent(input.value)
-        }).join('&')
-      }
-
-      var init = function () {
-        var form = document.querySelector('form')
-        var button = form.querySelector('button')
-        var inputs = [].slice.call(document.querySelectorAll('input'))
-        var script
-
-        window.callback = function (data) {
-          document.body.removeChild(script)
-
-          if (data.result === 'success') {
-            alert("Thanks! You've been sent a confirmation email.")
-          } else if (data.result === 'error') {
-            button.removeAttribute('disabled')
-            alert("Sorry. " + data.msg)
-          }
-        }
-
-        form.addEventListener('submit', function (event) {
-          event.preventDefault()
-
-          button.setAttribute('disabled', '')
-
-          script = document.createElement('script')
-          script.src = form.action + '-json?' + params(inputs) + '&c=callback'
-
-          document.body.appendChild(script)
-        })
-      }
-
-      document.addEventListener('DOMContentLoaded', init)
-    </script>
+    <script src="../tmp/scripts.js"></script>
   </body>
 </html>

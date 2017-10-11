@@ -1,0 +1,176 @@
+html {
+  height: 100%;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  align-items: center;
+  background-color: #313332;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: Muli, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  margin: 0;
+  padding: 20px 10px;
+}
+
+header {
+  text-align: center;
+}
+
+header,
+form {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  width: 100%;
+}
+
+h1 {
+  color: #5CE6A1;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 36px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+header p {
+  color: #F5FAF7;
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-top: 12px;
+}
+
+svg {
+  display: block;
+  margin-top: 40px;
+  max-width: 100%;
+}
+
+form {
+  display: flex;
+  margin-top: 40px;
+}
+
+button,
+[type="email"] {
+  font: inherit;
+  padding: 11px 10px;
+}
+
+button {
+  background-color: #5CE6A1;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:not([disabled]):hover,
+button:not([disabled]):focus {
+  background-color: #52CC8F;
+}
+
+button[disabled] {
+  cursor: progress;
+}
+
+button span:last-child {
+  transition: all 0.3s ease-out;
+}
+
+button[disabled] span:last-child {
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+
+[type="email"] {
+  border: none;
+  color: #313332;
+  flex-grow: 1;
+  white-space: nowrap;
+}
+
+::-webkit-input-placeholder {
+  color: #79807C;
+}
+
+::-moz-placeholder {
+  color: #79807C;
+}
+
+::-ms-input-placeholder {
+  color: #79807C;
+}
+
+:-moz-placeholder {
+  color: #79807C;
+}
+
+:placeholder {
+  color: #79807C;
+}
+
+@media screen and (max-width: 379px) {
+  form {
+    flex-direction: column;
+  }
+
+  button {
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 380px) {
+  button {
+    margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 449px) {
+  header {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  body {
+    font-size: 16px;
+    padding: 60px 20px;
+  }
+
+  h1,
+  header p {
+    letter-spacing: 1px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  header p {
+    font-size: 18px;
+  }
+
+  svg,
+  form {
+    margin-top: 60px;
+  }
+
+  button,
+  [type="email"] {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
