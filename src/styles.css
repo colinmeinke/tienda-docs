@@ -142,7 +142,7 @@ button[disabled] span:last-child {
 
 @media screen and (max-width: 449px) {
   header {
-    max-width: 80%;
+    max-width: 240px;
   }
 }
 
