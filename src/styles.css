@@ -1,3 +1,17 @@
+@keyframes pulse {
+  0% { opacity: 0.2; }
+  33% { opacity: 0.6; }
+  66% { opacity: 0.2; }
+  100% { opacity: 0.2; }
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(1px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-2px, 0, 0); }
+  40%, 60% { transform: translate3d(2px, 0, 0); }
+}
+
 html {
   height: 100%;
 }
@@ -53,15 +67,22 @@ header p {
   margin-top: 12px;
 }
 
-svg {
+.shop {
   display: block;
   margin-top: 40px;
   max-width: 100%;
 }
 
 form {
+  animation: none;
   display: flex;
   margin-top: 40px;
+  position: relative;
+  transform: translate3d(0,0,0);
+}
+
+form[data-error] {
+  animation: shake 0.5s 0.3s cubic-bezier(.36,.07,.19,.97) both;
 }
 
 button,
@@ -76,6 +97,8 @@ button {
   color: #FFF;
   cursor: pointer;
   font-weight: 800;
+  overflow: hidden;
+  position: relative;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -84,17 +107,95 @@ button:not([disabled]):focus {
   background-color: #5CE6A1;
 }
 
-button[disabled] {
+form:not([data-success]) button[disabled] {
   cursor: progress;
 }
 
-button span:last-child {
+form[data-success] button {
+  cursor: default;
+}
+
+.dots,
+.tick {
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transition: all 0.3s ease-in;
+  width: 100%;
+}
+
+.dots {
+  height: 10px;
+  margin-top: -5px;
+}
+
+.dots span {
+  animation: pulse 0.9s infinite;
+  background-color: #FFF;
+  height: 10px;
+  margin-left: 3px;
+  margin-right: 3px;
+  opacity: 0.2;
+  width: 10px;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+button:not([disabled]) .dots {
+  transform: translateX(-100%);
+}
+
+form:not([data-success]) button[disabled] .dots {
+  opacity: 1;
   transition: all 0.3s ease-out;
 }
 
-button[disabled] span:last-child {
+form[data-success] .dots {
+  transform: translateX(100%);
+}
+
+.tick {
+  height: 15px;
+  margin-top: -7px;
+}
+
+.tick svg {
+  height: 15px;
+  width: 19px;
+}
+
+button:not([disabled]) .tick {
+  transform: translateX(-200%);
+}
+
+form:not([data-success]) button[disabled] .tick {
+  transform: translateX(-100%);
+}
+
+form[data-success] .tick {
+  opacity: 1;
+}
+
+.text {
+  display: block;
+  transition: all 0.3s ease-out;
+  transform: translateX(0px);
+}
+
+button[disabled] .text {
   opacity: 0;
   transition: all 0.3s ease-in;
+  transform: translateX(calc(100% + 20px));
 }
 
 [type="email"] {
@@ -104,23 +205,7 @@ button[disabled] span:last-child {
   white-space: nowrap;
 }
 
-::-webkit-input-placeholder {
-  color: #79807C;
-}
-
-::-moz-placeholder {
-  color: #79807C;
-}
-
-::-ms-input-placeholder {
-  color: #79807C;
-}
-
-:-moz-placeholder {
-  color: #79807C;
-}
-
-:placeholder {
+::placeholder {
   color: #79807C;
 }
 
@@ -160,7 +245,7 @@ button[disabled] span:last-child {
     font-size: 18px;
   }
 
-  svg,
+  .shop,
   form {
     margin-top: 60px;
   }
@@ -169,5 +254,9 @@ button[disabled] span:last-child {
   [type="email"] {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  button[disabled] .text {
+    transform: translateX(calc(100% + 40px));
   }
 }

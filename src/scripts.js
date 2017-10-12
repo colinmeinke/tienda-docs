@@ -14,15 +14,23 @@ var init = function () {
     document.body.removeChild(script)
 
     if (data.result === 'success') {
-      alert("Thanks! You've been sent a confirmation email.")
+      form.setAttribute('data-success', '')
     } else if (data.result === 'error') {
       button.removeAttribute('disabled')
-      alert("Sorry. " + data.msg)
+
+      form.setAttribute('data-error', '')
+      form.style.animation = ''
+
+      window.setTimeout(function () {
+        form.removeAttribute('data-error')
+      }, 800)
     }
   }
 
   form.addEventListener('submit', function (event) {
     event.preventDefault()
+
+    form.style.animation = 'none'
 
     button.setAttribute('disabled', '')
 
